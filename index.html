@@ -40,7 +40,7 @@
     <div class="cars">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW Seria 5">
             <h3>BMW Seria 5</h3>
             <p>Automată • Benzină • 5 locuri</p>
             <b>650 MDL / zi</b>
@@ -50,7 +50,7 @@
 
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Mercedes C-Class">
             <h3>Mercedes C-Class</h3>
             <p>Automată • Diesel • 5 locuri</p>
             <b>750 MDL / zi</b>
@@ -60,7 +60,7 @@
 
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Audi A6">
             <h3>Audi A6</h3>
             <p>Automată • Benzină • 5 locuri</p>
             <b>700 MDL / zi</b>
@@ -69,9 +69,6 @@
         </div>
 
     </div>
-
-
-    <!-- FORMULAR ADAUGARE MAȘINĂ -->
 
  <div class="add-car">
     <div class="add-car-header">
@@ -102,9 +99,10 @@
             <label for="carPrice">Preț pe zi</label>
             <div class="price-input">
                 <input
-                    type="text"
+                    type="number"
                     id="carPrice"
                     placeholder="Ex: 650"
+                    min="0"
                 >
                 <span>MDL</span>
             </div>
@@ -117,11 +115,6 @@
 </div>
 
 <div id="newCars" class="cars"></div>
-
-
-    <!-- AICI VOR APĂREA TOATE MAȘINILE NOI -->
-
-    <div id="newCars" class="cars"></div>
 
 </section>
 
@@ -165,79 +158,7 @@
 
 </footer>
 
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-function addCar() {
-
-    let name = document.getElementById("carName").value;
-    let description = document.getElementById("carDescription").value;
-    let price = document.getElementById("carPrice").value;
-
-
-    // Verificăm dacă toate câmpurile sunt completate
-
-    if (name === "" || description === "" || price === "") {
-
-        alert("Completează toate câmpurile!");
-
-        return;
-    }
-
-
-    // Verificăm dacă prețul conține doar cifre
-
-    if (isNaN(price)) {
-
-        alert("Prețul trebuie să conțină doar cifre!");
-
-        return;
-    }
-
-
-    // Creăm un card nou
-
-    let car = document.createElement("div");
-
-    car.className = "card";
-
-
-    // Punem informațiile în card
-
-    car.innerHTML = `
-        <h3>${name}</h3>
-
-        <p>${description}</p>
-
-        <b>${price} MDL / zi</b>
-
-        <br><br>
-
-        <a class="btn" href="#">
-            Închiriază
-        </a>
-    `;
-
-
-    // Adăugăm cardul în pagină
-
-    document.getElementById("newCars").appendChild(car);
-
-
-    // Golim formularul
-
-    document.getElementById("carName").value = "";
-
-    document.getElementById("carDescription").value = "";
-
-    document.getElementById("carPrice").value = "";
-
-}
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
 </html>

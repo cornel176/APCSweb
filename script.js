@@ -1,26 +1,41 @@
-const form = document.getElementById("projectForm");
-const projectList = document.getElementById("projectList");
+function addCar() {
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
+    let name = document.getElementById("carName").value;
+    let description = document.getElementById("carDescription").value;
+    let price = document.getElementById("carPrice").value;
 
-    const title = document.getElementById("title").value;
-    const description = document.getElementById("description").value;
+    if (name === "" || description === "" || price === "") {
+        alert("Completează toate câmpurile!");
+        return;
+    }
 
-    const card = document.createElement("div");
+    if (isNaN(price)) {
+        alert("Prețul trebuie să conțină doar cifre!");
+        return;
+    }
 
-    card.innerHTML = `
-        <h3>${title}</h3>
-        <p>${description}</p>
-    `;
+    let car = document.createElement("div");
+    car.className = "card";
 
-    card.style.background = "#f8fafc";
-    card.style.padding = "15px";
-    card.style.marginTop = "15px";
-    card.style.borderRadius = "8px";
-    card.style.border = "1px solid #ddd";
+    let title = document.createElement("h3");
+    title.textContent = name;
 
-    projectList.appendChild(card);
+    let desc = document.createElement("p");
+    desc.textContent = description;
 
-    form.reset();
-});
+    let priceTag = document.createElement("b");
+    priceTag.textContent = `${price} MDL / zi`;
+
+    let link = document.createElement("a");
+    link.className = "btn";
+    link.href = "#";
+    link.textContent = "Închiriază";
+
+    car.append(title, desc, document.createElement("br"), document.createElement("br"), priceTag, document.createElement("br"), document.createElement("br"), link);
+
+    document.getElementById("newCars").appendChild(car);
+
+    document.getElementById("carName").value = "";
+    document.getElementById("carDescription").value = "";
+    document.getElementById("carPrice").value = "";
+}
