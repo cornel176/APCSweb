@@ -6,6 +6,7 @@
     <title>AutoRent</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
@@ -23,6 +24,7 @@
     </nav>
 </header>
 
+
 <section id="home" class="hero">
     <div>
         <h1>Închiriază mașina potrivită</h1>
@@ -30,6 +32,7 @@
         <a class="btn" href="#cars">Vezi mașinile</a>
     </div>
 </section>
+
 
 <section id="cars">
     <h2 class="title">Mașinile noastre</h2>
@@ -45,6 +48,7 @@
             <a class="btn" href="#">Închiriază</a>
         </div>
 
+
         <div class="card">
             <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80">
             <h3>Mercedes C-Class</h3>
@@ -53,6 +57,7 @@
             <br><br>
             <a class="btn" href="#">Închiriază</a>
         </div>
+
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80">
@@ -64,30 +69,175 @@
         </div>
 
     </div>
+
+
+    <!-- FORMULAR ADAUGARE MAȘINĂ -->
+
+ <div class="add-car">
+    <div class="add-car-header">
+        <h2>Adaugă o mașină</h2>
+        <p>Completează informațiile pentru a adăuga o mașină nouă.</p>
+    </div>
+
+    <div class="car-form">
+        <div class="input-group">
+            <label for="carName">Numele mașinii</label>
+            <input
+                type="text"
+                id="carName"
+                placeholder="Ex: BMW X5"
+            >
+        </div>
+
+        <div class="input-group">
+            <label for="carDescription">Descriere</label>
+            <input
+                type="text"
+                id="carDescription"
+                placeholder="Ex: Automată • Diesel • 5 locuri"
+            >
+        </div>
+
+        <div class="input-group">
+            <label for="carPrice">Preț pe zi</label>
+            <div class="price-input">
+                <input
+                    type="text"
+                    id="carPrice"
+                    placeholder="Ex: 650"
+                >
+                <span>MDL</span>
+            </div>
+        </div>
+
+        <button class="add-btn" onclick="addCar()">
+            + Adaugă mașina
+        </button>
+    </div>
+</div>
+
+<div id="newCars" class="cars"></div>
+
+
+    <!-- AICI VOR APĂREA TOATE MAȘINILE NOI -->
+
+    <div id="newCars" class="cars"></div>
+
 </section>
 
+
 <section id="about" class="about">
+
     <h2>Despre AutoRent</h2>
+
     <p>
         Oferim mașini moderne și bine întreținute pentru
         călătorii în oraș sau în afara lui.
     </p>
+
 </section>
 
+
 <section id="contact">
+
     <h2 class="title">Contact</h2>
 
     <div class="contact">
+
         <p>📍 Chișinău, Moldova</p>
+
         <p>📞 +373 60 000 000</p>
+
         <p>✉️ contact@autorent.md</p>
+
     </div>
+
 </section>
 
+
 <footer>
+
     <h3>Auto<span>Rent</span></h3>
-    <p>© 2026 AutoRent. Toate drepturile rezervate.</p>
+
+    <p>
+        © 2026 AutoRent. Toate drepturile rezervate.
+    </p>
+
 </footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function addCar() {
+
+    let name = document.getElementById("carName").value;
+    let description = document.getElementById("carDescription").value;
+    let price = document.getElementById("carPrice").value;
+
+
+    // Verificăm dacă toate câmpurile sunt completate
+
+    if (name === "" || description === "" || price === "") {
+
+        alert("Completează toate câmpurile!");
+
+        return;
+    }
+
+
+    // Verificăm dacă prețul conține doar cifre
+
+    if (isNaN(price)) {
+
+        alert("Prețul trebuie să conțină doar cifre!");
+
+        return;
+    }
+
+
+    // Creăm un card nou
+
+    let car = document.createElement("div");
+
+    car.className = "card";
+
+
+    // Punem informațiile în card
+
+    car.innerHTML = `
+        <h3>${name}</h3>
+
+        <p>${description}</p>
+
+        <b>${price} MDL / zi</b>
+
+        <br><br>
+
+        <a class="btn" href="#">
+            Închiriază
+        </a>
+    `;
+
+
+    // Adăugăm cardul în pagină
+
+    document.getElementById("newCars").appendChild(car);
+
+
+    // Golim formularul
+
+    document.getElementById("carName").value = "";
+
+    document.getElementById("carDescription").value = "";
+
+    document.getElementById("carPrice").value = "";
+
+}
+
+</script>
+
 
 </body>
 </html>
