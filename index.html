@@ -1,130 +1,93 @@
 <!DOCTYPE html>
-
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prima mea pagină Web</title>
-
-```
-<link rel="stylesheet" href="style.css">
-```
-
+    <title>AutoRent</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-```
 <header>
-    <h1>Prima mea pagină Web</h1>
-    <p>Bine ai venit pe pagina mea web!</p>
-</header>
-
-<main>
-
-    <section>
-        <h2>Despre această pagină</h2>
-
-        <p>
-            Aceasta este prima mea pagină Web creată folosind HTML și CSS.
-            Scopul acestei pagini este de a demonstra utilizarea elementelor
-            de bază HTML.
-        </p>
-
-        <p>
-            HTML este folosit pentru structura paginii, iar CSS este folosit
-            pentru aspectul și designul acesteia.
-        </p>
-    </section>
-
-    <section>
-        <h2>Imagine</h2>
-
-        <img src="https://via.placeholder.com/500x250"
-             alt="Imagine de exemplu">
-    </section>
-
-    <section>
-        <h2>Lista mea</h2>
+    <nav>
+        <h2>Auto<span>Rent</span></h2>
 
         <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Git și GitHub</li>
+            <li><a href="#home">Acasă</a></li>
+            <li><a href="#cars">Mașini</a></li>
+            <li><a href="#about">Despre noi</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </section>
 
-    <section>
-        <h2>Link util</h2>
+        <a class="btn" href="#cars">Închiriază</a>
+    </nav>
+</header>
 
-        <p>
-            Poți afla mai multe despre HTML pe
-            <a href="https://developer.mozilla.org/ro/docs/Web/HTML"
-               target="_blank">
-                MDN Web Docs
-            </a>.
-        </p>
-    </section>
+<section id="home" class="hero">
+    <div>
+        <h1>Închiriază mașina potrivită</h1>
+        <p>Mașini sigure, prețuri bune și rezervare rapidă.</p>
+        <a class="btn" href="#cars">Vezi mașinile</a>
+    </div>
+</section>
 
-    <section>
-        <h2>Tabel</h2>
+<section id="cars">
+    <h2 class="title">Mașinile noastre</h2>
 
-        <table border="1">
-            <tr>
-                <th>Tehnologie</th>
-                <th>Utilizare</th>
-            </tr>
+    <div class="cars">
 
-            <tr>
-                <td>HTML</td>
-                <td>Structura paginii</td>
-            </tr>
-
-            <tr>
-                <td>CSS</td>
-                <td>Designul paginii</td>
-            </tr>
-
-            <tr>
-                <td>JavaScript</td>
-                <td>Interactivitate</td>
-            </tr>
-        </table>
-    </section>
-
-    <section>
-        <h2>Formular</h2>
-
-        <form>
-
-            <label for="name">Nume:</label>
-            <input type="text" id="name" name="name">
-
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80">
+            <h3>BMW Seria 5</h3>
+            <p>Automată • Benzină • 5 locuri</p>
+            <b>650 MDL / zi</b>
             <br><br>
+            <a class="btn" href="#">Închiriază</a>
+        </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80">
+            <h3>Mercedes C-Class</h3>
+            <p>Automată • Diesel • 5 locuri</p>
+            <b>750 MDL / zi</b>
             <br><br>
+            <a class="btn" href="#">Închiriază</a>
+        </div>
 
-            <label for="message">Mesaj:</label>
-            <br>
-            <textarea id="message" name="message" rows="5" cols="30"></textarea>
-
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80">
+            <h3>Audi A6</h3>
+            <p>Automată • Benzină • 5 locuri</p>
+            <b>700 MDL / zi</b>
             <br><br>
+            <a class="btn" href="#">Închiriază</a>
+        </div>
 
-            <button type="submit">Trimite</button>
+    </div>
+</section>
 
-        </form>
-    </section>
+<section id="about" class="about">
+    <h2>Despre AutoRent</h2>
+    <p>
+        Oferim mașini moderne și bine întreținute pentru
+        călătorii în oraș sau în afara lui.
+    </p>
+</section>
 
-</main>
+<section id="contact">
+    <h2 class="title">Contact</h2>
+
+    <div class="contact">
+        <p>📍 Chișinău, Moldova</p>
+        <p>📞 +373 60 000 000</p>
+        <p>✉️ contact@autorent.md</p>
+    </div>
+</section>
 
 <footer>
-    <p>&copy; 2026 Prima mea pagină Web</p>
+    <h3>Auto<span>Rent</span></h3>
+    <p>© 2026 AutoRent. Toate drepturile rezervate.</p>
 </footer>
-```
 
 </body>
 </html>
